@@ -1,3 +1,4 @@
+@import 'https://fonts.googleapis.com/css?family=Share+Tech+Mono';
 
 :root {
   /* Colors */
@@ -789,11 +790,38 @@ select.form-control {
 }
 
 /* Sections */
+/* REPLACED .section-title */
 .section-title {
   text-align: center;
   margin-bottom: var(--space-32);
   font-size: var(--font-size-3xl);
   color: var(--color-text);
+
+  /* --- NEW LINES --- */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* --- ADD THIS NEW CODE --- */
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  flex-grow: 1; /* This makes the lines fill the empty space */
+  height: 2px; /* Sets the line thickness */
+  background: var(--color-border); /* Uses your site's existing border color */
+}
+
+.section-title::before {
+  margin-right: var(--space-24); /* Adds 24px space next to the title */
+  /* This creates the fade-out effect on the left */
+  background: linear-gradient(to right, transparent, var(--color-border));
+}
+
+.section-title::after {
+  margin-left: var(--space-24); /* Adds 24px space next to the title */
+  /* This creates the fade-out effect on the right */
+  background: linear-gradient(to left, transparent, var(--color-border));
 }
 
 section {
