@@ -334,7 +334,7 @@ pre code {
 
 .btn--primary {
   background: var(--color-primary);
-  color: var(--color-btn-primary-text);
+  color: rgb(255, 255, 255);
 }
 
 .btn--primary:hover {
@@ -342,7 +342,7 @@ pre code {
 }
 
 .btn--primary:active {
-  background: var(--color-primary-active);
+  background:rgb(255, 255, 255);
 }
 
 .btn--secondary {
@@ -375,8 +375,8 @@ pre code {
 }
 
 .btn--lg {
-  padding: var(--space-10) var(--space-20);
-  font-size: var(--font-size-lg);
+  padding: var(--space-16) var(--space-32);
+  font-size: var(--font-size-3xl);
   border-radius: var(--radius-md);
 }
 
@@ -768,7 +768,7 @@ select.form-control {
   text-decoration: none;
   font-weight: var(--font-weight-medium);
   transition: color var(--duration-fast) var(--ease-standard);
-  padding: var(--space-8) 0;
+  padding: var(--space-8) var(--space-8);
 }
 
 .nav-link:hover {
@@ -949,7 +949,7 @@ section {
   font-size: 1.375rem; /* 22px */
   line-height: var(--line-height-tight);
   padding-right: var(--space-16);
-  color: var(--color-text);
+  color: rgba(0, 0, 0, 0.8);
   margin: 0; /* Reset h3 margin */
 }
 
@@ -987,9 +987,10 @@ section {
 
 /* This is the paragraph description */
 .service-card-content p {
-  color: var(--color-text-secondary);
+  color: rgba(0, 0, 0, 0.8);
   flex-grow: 1; /* This pushes the footer to the bottom */
   margin-bottom: var(--space-16);
+  font-size: 1.1rem;
 }
 
 /* This replaces .service-levels and .service-price */
@@ -1004,10 +1005,17 @@ section {
 }
 
 .service-card-meta {
+ background: var(--color-primary);
+  color: white;
+  padding: var(--space-4) var(--space-12);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+
   display: flex;
   align-items: center;
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
+ 
+  font-size: var(--font-size-md);
 }
 
 .service-card-meta svg {
