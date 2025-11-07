@@ -1,11 +1,13 @@
 @import 'https://fonts.googleapis.com/css?family=Share+Tech+Mono';
 
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
+
 :root {
   /* Colors */
-  /* --color-background: rgba(252, 252, 249, 1);
-  --color-surface: rgba(255, 255, 253, 1); */
-    --color-background: rgb(255, 255, 255);
-  --color-surface: rgb(255, 255, 255);
+--color-background: rgb(246, 250, 246); /* #F6FAF6 */
+  --color-surface: rgb(250, 253, 250);    /* #FAFDFA */
+  
   --color-text: rgba(19, 52, 59, 1);
   --color-text-secondary: rgba(98, 108, 113, 1);
   --color-primary: rgba(33, 128, 141, 1);
@@ -44,15 +46,18 @@
     BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
     Monaco, Consolas, monospace;
-  --font-size-xs: 11px;
-  --font-size-sm: 12px;
-  --font-size-base: 14px;
-  --font-size-md: 14px;
-  --font-size-lg: 16px;
-  --font-size-xl: 18px;
-  --font-size-2xl: 20px;
-  --font-size-3xl: 24px;
-  --font-size-4xl: 30px;
+  
+  --font-size-xs: 13px; /* was 11px */
+  --font-size-sm: 14px; /* was 12px */
+  --font-size-base: 16px; /* was 14px */
+  --font-size-md: 16px; /* was 14px */
+  --font-size-lg: 18px; /* was 16px */
+  --font-size-xl: 20px; /* was 18px */
+  --font-size-2xl: 22px; /* was 20px */
+  --font-size-3xl: 26px; /* was 24px */
+  --font-size-4xl: 32px; /* was 30px */
+
+
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 550;
@@ -680,7 +685,7 @@ select.form-control {
   object-position: center;
   
   /* These properties are kept from the original */
-  opacity: 0.9;
+  opacity: 1;
   z-index: 1;
 }
 
@@ -695,7 +700,7 @@ select.form-control {
 
 .hero-title {
   color:rgb(255, 255, 255);
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-16);
   line-height: var(--line-height-tight);
@@ -752,6 +757,7 @@ select.form-control {
 }
 
 .nav-brand h2 {
+  font-family: Agbalumo;
   color: var(--color-primary);
   margin: 0;
   font-size: var(--font-size-xl);
@@ -789,12 +795,14 @@ select.form-control {
   transition: all var(--duration-normal) var(--ease-standard);
 }
 
+
+
 /* Sections */
 /* REPLACED .section-title */
 .section-title {
   text-align: center;
   margin-bottom: var(--space-32);
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-4xl);
   color: var(--color-text);
 
   /* --- NEW LINES --- */
@@ -829,6 +837,39 @@ section {
 }
 
 /* About Section */
+
+
+#about {
+  /* 1. This is essential. It tells the ::before 
+     pseudo-element to position itself *inside* #about. */
+  position: relative;
+  
+  /* 2. This prevents weird stacking issues. Good practice. */
+  isolation: isolate;
+}
+
+#about::before {
+  /* 3. This creates the new "layer" */
+  content: '';
+  position: absolute;
+  
+  /* 4. This stretches the layer to fill the whole section */
+  inset: 0; /* (Same as top:0, left:0, right:0, bottom:0) */
+
+  /* 5. Add your image */
+  background-image: url('bg.webp');
+  background-size: cover;
+  background-position: center;
+  
+  /* 6. This is the magic! Adjust this value. */
+  /* 1.0 is 100% visible, 0.5 is 50% transparent */
+  opacity: 0.1; /* <-- PLAY WITH THIS NUMBER */
+  
+  /* 7. This puts the layer *behind* your text content */
+  z-index: -1;
+}
+/*------------------------------------------------*/
+
 .about {
   background: var(--color-surface);
 }
