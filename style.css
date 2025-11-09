@@ -857,7 +857,7 @@ section {
   inset: 0; /* (Same as top:0, left:0, right:0, bottom:0) */
 
   /* 5. Add your image */
-  background-image: url('bg.webp');
+  background-image: url('bg.png');
   background-size: cover;
   background-position: center;
   
